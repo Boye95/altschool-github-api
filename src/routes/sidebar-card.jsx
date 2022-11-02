@@ -4,6 +4,7 @@ import { GiShadowFollower } from 'react-icons/gi'
 import { GoPrimitiveDot } from 'react-icons/go'
 import { FaGlobeAfrica, FaTwitter } from 'react-icons/fa'
 import { AiOutlineLink } from 'react-icons/ai'
+import { RiGitRepositoryFill } from 'react-icons/ri'
 
 // fetch data from github api using react query
 const fetchProfile = async () => {
@@ -16,41 +17,52 @@ export default function SidebarCard () {
 
   console.log(status)
   return (
-    <aside className='w-[25%] flex flex-col gap-11 items-center p-2 bg-slate-300'>
+    <aside className='w-[25%] flex flex-col gap-11 items-center p-2 py-3 bg-white shadow-lg'>
       <header className='text-4xl font-bold font-urbanist text-center underline decoration-wavy decoration-slate-500'>
         ALT-GITHUB-API
       </header>
 
-      <div className='flex flex-col items-center gap-4'>
-        <div className='h-[15rem] w-[15rem] rounded-xl shadow-xl bg-slate-50 overflow-hidden'>
+      <div className='font-worksans flex flex-col items-center gap-2'>
+        <div className='h-[12rem] w-[12rem] rounded-xl shadow-xl bg-slate-50 overflow-hidden'>
           <img
             src={status === 'success' ? data.avatar_url : avatar}
             alt='profileimg'
             className='w-full h-full'
           />
         </div>
-        <h2 className='font-worksans font-normal text-2xl text-center'>
+        <h2 className='font-normal text-2xl text-center'>
           {status === 'success' ? data.name : 'Loading...'}
         </h2>
         <p className='text-center'>
           {status === 'success' ? data.bio : 'Loading...'}
         </p>
-        <p className='flex items-center justify-start gap-2'>
-          <GiShadowFollower />
-          <span className=''>
-            {status === 'success' ? data.followers : 'Loading...'}
-            <span className='px-1'>followers</span>
-          </span>
-          <GoPrimitiveDot />
-          <span className=''>
-            {status === 'success' ? data.following : ''}
-            <span className='px-1'>following</span>
-          </span>
-        </p>
+        <div className='flex flex-col items-center justify-start gap-2'>
+          <GiShadowFollower size={30} />
+          <p className='flex items-center'>
+            <span className='flex flex-col items-center'>
+              {status === 'success' ? (
+                <span className='text-4xl'>{data.followers}</span>
+              ) : (
+                'Loading...'
+              )}
+              <span className='px-1'>followers</span>
+            </span>
+            <GoPrimitiveDot />
+            <span className='flex flex-col items-center'>
+              {status === 'success' ? (
+                <span className='text-4xl'>{data.following}</span>
+              ) : (
+                ''
+              )}
+              <span className='px-1'>following</span>
+            </span>
+          </p>
+        </div>
 
-        <div className=''>
+        <div className='flex flex-col items-center'>
+          <RiGitRepositoryFill size={30} />
+          {status === 'success' ? <span className='text-4xl'>{data.public_repos}</span> : 'Loading...'}
           <p className=''>Repo Count</p>
-          {status === 'success' ? data.public_repos : 'Loading...'}
         </div>
 
         <div className=''>
