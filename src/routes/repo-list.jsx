@@ -1,5 +1,6 @@
 import { useQuery } from '@tanstack/react-query'
 import { useState } from 'react'
+import { Link, useParams } from 'react-router-dom'
 
 // fetch data from github api using react query
 const fetchRepos = async page => {
@@ -10,6 +11,7 @@ const fetchRepos = async page => {
 }
 
 export default function RepoList () {
+  // const { repoId } = useParams()
   const [page, setPage] = useState(1)
   // useQuery hook to fetch data from github api
   const { data: repo, status } = useQuery(
@@ -53,10 +55,10 @@ export default function RepoList () {
           ) : status === 'success' ? (
             repo.map(singlerepo => {
               return (
-                <div className='flex justify-between w-[80%] border-2 rounded-lg p-4 shadow-md cursor-pointer ring-emerald-300 ring-offset-2 transition-all hover:ring-2 hover:text-gray-100 hover:bg-emerald-500'>
+                <Link to={`single-repo/${singlerepo.id}`} key={singlerepo.id} className='flex justify-between w-[80%] border-2 rounded-lg p-4 shadow-md cursor-pointer ring-emerald-300 ring-offset-2 transition-all hover:ring-2 hover:text-gray-100 hover:bg-emerald-500'>
                   <p className=''>{singlerepo.name}</p>
                   <p className=''>{singlerepo.language}</p>
-                </div>
+                </Link>
               )
             })
           ) : (
