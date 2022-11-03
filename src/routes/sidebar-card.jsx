@@ -17,13 +17,13 @@ export default function SidebarCard () {
 
   console.log(status)
   return (
-    <aside className='w-[25%] flex flex-col gap-11 items-center p-2 py-3 bg-white shadow-lg'>
-      <header className='text-4xl font-bold font-urbanist text-center underline decoration-wavy decoration-slate-500'>
+    <aside className='w-[25%] h-full flex flex-col gap-11 items-center p-2 py-3 bg-white shadow-lg'>
+      <header className='text-3xl font-bold font-urbanist text-center underline decoration-wavy decoration-slate-500'>
         ALT-GITHUB-API
       </header>
 
       <div className='font-worksans flex flex-col items-center gap-2'>
-        <div className='h-[12rem] w-[12rem] rounded-xl shadow-xl bg-slate-50 overflow-hidden'>
+        <div className='h-[12rem] w-[12rem] rounded-xl shadow-xl bg-slate-50 overflow-hidden border-2 border-gray-200 ring-offset-2 ring-emerald-300 transition-all hover:ring-2'>
           <img
             src={status === 'success' ? data.avatar_url : avatar}
             alt='profileimg'
@@ -33,15 +33,15 @@ export default function SidebarCard () {
         <h2 className='font-normal text-2xl text-center'>
           {status === 'success' ? data.name : 'Loading...'}
         </h2>
-        <p className='text-center'>
+        <p className='text-center text-[0.9rem] px-2'>
           {status === 'success' ? data.bio : 'Loading...'}
         </p>
-        <div className='flex flex-col items-center justify-start gap-2'>
-          <GiShadowFollower size={30} />
+        <div className='flex flex-col items-center justify-start gap-2 mt-2'>
+          <GiShadowFollower size={25} />
           <p className='flex items-center'>
             <span className='flex flex-col items-center'>
               {status === 'success' ? (
-                <span className='text-4xl'>{data.followers}</span>
+                <span className='text-3xl'>{data.followers}</span>
               ) : (
                 'Loading...'
               )}
@@ -50,7 +50,7 @@ export default function SidebarCard () {
             <GoPrimitiveDot />
             <span className='flex flex-col items-center'>
               {status === 'success' ? (
-                <span className='text-4xl'>{data.following}</span>
+                <span className='text-3xl'>{data.following}</span>
               ) : (
                 ''
               )}
@@ -59,9 +59,13 @@ export default function SidebarCard () {
           </p>
         </div>
 
-        <div className='flex flex-col items-center'>
+        <div className='flex flex-col items-center mt-2'>
           <RiGitRepositoryFill size={30} />
-          {status === 'success' ? <span className='text-4xl'>{data.public_repos}</span> : 'Loading...'}
+          {status === 'success' ? (
+            <span className='text-4xl'>{data.public_repos}</span>
+          ) : (
+            'Loading...'
+          )}
           <p className=''>Repo Count</p>
         </div>
 
@@ -71,7 +75,7 @@ export default function SidebarCard () {
             {status === 'success' ? data.location : 'Loading...'}
           </p>
           <p className='flex items-center gap-1'>
-            <AiOutlineLink />
+            <AiOutlineLink size={20} />
             {status === 'success' ? (
               <a href={data.blog} target='_blank' rel='noopener noreferrer'>
                 {data.blog}

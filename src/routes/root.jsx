@@ -12,7 +12,7 @@ const queryClient = new QueryClient()
 export default function Root () {
   return (
     <QueryClientProvider client={queryClient}>
-      <div className='w-[80%] mx-auto flex bg-emerald-100'>
+      <div className='w-[80%] h-screen mx-auto flex bg-emerald-100'>
         <SidebarCard />
         <Outlet />
       </div>
