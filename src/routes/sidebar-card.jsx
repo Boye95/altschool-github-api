@@ -1,4 +1,5 @@
 import { useQuery } from '@tanstack/react-query'
+import { Link } from 'react-router-dom'
 import avatar from '../assets/avatar.jpg'
 import { GiShadowFollower } from 'react-icons/gi'
 import { GoPrimitiveDot } from 'react-icons/go'
@@ -15,11 +16,16 @@ const fetchProfile = async () => {
 export default function SidebarCard () {
   const { data, status } = useQuery(['profile'], fetchProfile)
 
-  console.log(status)
+  // console.log(status)
   return (
-    <aside className='w-[25%] h-full flex flex-col gap-11 items-center p-2 py-3 bg-white shadow-lg'>
-      <header className='text-3xl font-bold font-urbanist text-center underline decoration-wavy decoration-slate-500'>
-        ALT-GITHUB-API
+    <aside className='w-[80%] h-[95%] flex flex-col gap-11 p-6 bg-white shadow-lg'>
+      <header className='flex justify-between items-center w-full mx-auto font-urbanist'>
+        <h1 className='text-3xl font-bold text-center underline decoration-wavy decoration-slate-500'>
+          ALT-GITHUB-API
+        </h1>
+        <Link to='/repo-list' className='border-2 border-emerald-100 rounded-lg py-1 px-4 text-white bg-emerald-400 shadow-lg ring-2 ring-emerald-200 ring-offset-2 transition-all hover:text-black hover:bg-white hover:shadow-sm hover:ring-offset-1 disabled:opacity-50'>
+          Open Repository List
+        </Link>
       </header>
 
       <div className='font-worksans flex flex-col items-center gap-2'>
