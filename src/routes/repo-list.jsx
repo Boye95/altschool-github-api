@@ -16,7 +16,7 @@ export default function RepoList () {
   const handleToggle = () => {
     setToggle(!toggle)
   }
-  
+
   // const { repoId } = useParams()
   const [page, setPage] = useState(1)
   // useQuery hook to fetch data from github api
@@ -71,7 +71,7 @@ export default function RepoList () {
               repo.map(singlerepo => {
                 return (
                   <Link
-                    to={`${singlerepo.id}`}
+                    to={`${singlerepo.name}`}
                     key={singlerepo.id}
                     className='flex justify-between w-full border-2 rounded-lg p-4 shadow-md cursor-pointer ring-emerald-300 ring-offset-2 transition-all hover:ring-2 hover:text-gray-100 hover:bg-emerald-500'
                   >
