@@ -27,7 +27,7 @@ export default function SingleRepo () {
         <link rel='canonical' href={`/repo-list/${singleRepo?.name}`} />
       </Helmet>
     <motion.div
-      className='absolute top-0 h-full w-full mx-auto my-auto p-6 rounded-lg shadow-lg bg-white'
+      className='absolute top-0 h-full w-full mx-auto my-auto p-6 rounded-lg shadow-md shadow-emerald-500 bg-white'
       initial={{ x: '50%' }}
       animate={{ x: 0 }}
     >
@@ -43,23 +43,23 @@ export default function SingleRepo () {
           <div>Loading...</div>
         ) : status === 'success' ? (
           <div className=''>
-            <div className='flex gap-4'>
-              <div className='h-[12rem] w-[12rem] rounded-xl shadow-xl bg-slate-50 overflow-hidden border-2 border-gray-200 ring-offset-2 ring-emerald-300 transition-all hover:ring-2'>
+            <div className='flex gap-4 sm:flex-col'>
+              <div className='h-[12rem] w-[12rem] rounded-xl shadow-xl bg-slate-50 overflow-hidden border-2 border-gray-200 ring-offset-2 ring-emerald-300 transition-all hover:ring-2 sm:mx-auto'>
                 <img src={star} alt='repoimg' className='w-full h-full' />
               </div>
 
               <div className='font-urbanist font-normal'>
-                <h1 className='text-2xl'>
+                <h1 className='text-2xl xs:text-xl'>
                   <span className='text-lg font-light font-worksans'>Name</span>
                   : {singleRepo.name}
                 </h1>
-                <div className='text-xl'>
+                <div className='text-xl xs:text-base'>
                   <span className='text-lg font-light font-worksans'>
                     fullName
                   </span>
                   : {singleRepo.full_name}
                 </div>
-                <div className='text-xl'>
+                <div className='text-xl xs:text-base'>
                   <span className='text-lg font-light font-worksans'>
                     Description
                   </span>{' '}
@@ -68,37 +68,37 @@ export default function SingleRepo () {
                     : 'No description for this project'}
                 </div>
 
-                <div className='text-xl'>
+                <div className='text-xl xs:text-base'>
                   <span className='text-lg font-light font-worksans'>
                     Created at
                   </span>
                   : {moment(singleRepo.created_at).format('lll')}
                 </div>
-                <div className='text-xl'>
+                <div className='text-xl xs:text-base'>
                   <span className='text-lg font-light font-worksans'>
                     Updated at
                   </span>
                   : {moment(singleRepo.updated_at).format('lll')}
                 </div>
-                <div className='text-xl'>
+                <div className='text-xl xs:text-base'>
                   <span className='text-lg font-light font-worksans'>
                     Language
                   </span>
                   : {singleRepo.language}
                 </div>
-                <div className='text-xl'>
+                <div className='text-xl xs:text-base'>
                   <span className='text-lg font-light font-worksans'>
                     Forks
                   </span>
                   : {singleRepo.forks_count}
                 </div>
-                <div className='text-xl'>
+                <div className='text-xl xs:text-base'>
                   <span className='text-lg font-light font-worksans'>
                     Watchers
                   </span>
                   : {singleRepo.watchers_count}
                 </div>
-                <div className='text-xl'>
+                <div className='text-xl xs:text-base'>
                   <span className='text-lg font-light font-worksans'>
                     Stars
                   </span>

@@ -7,7 +7,7 @@ import {
 } from '@tanstack/react-query'
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools'
 import { createBrowserRouter, RouterProvider, Route } from 'react-router-dom'
-import { Root, ErrorPage, RepoList, SidebarCard, SingleRepo } from './routes'
+import { Root, ErrorPage, RepoList, SingleRepo, ErrorBoundary } from './routes'
 import { HelmetProvider } from 'react-helmet-async'
 import './index.css'
 
@@ -28,16 +28,22 @@ const router = createBrowserRouter([
         element: <SingleRepo />
       }
     ]
+  },
+  {
+    path: 'error-boundary',
+    element: <ErrorBoundary />
   }
 ])
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-  <QueryClientProvider client={client}>
-    <React.StrictMode>
-      <HelmetProvider>
-        <RouterProvider router={router} />
-      </HelmetProvider>
-    </React.StrictMode>
-    <ReactQueryDevtools />
-  </QueryClientProvider>
+  <ErrorBoundary>
+    <QueryClientProvider client={client}>
+      <React.StrictMode>
+        <HelmetProvider>
+          <RouterProvider router={router} />
+        </HelmetProvider>
+      </React.StrictMode>
+      <ReactQueryDevtools />
+    </QueryClientProvider>
+  </ErrorBoundary>
 )
