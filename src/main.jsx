@@ -32,10 +32,6 @@ const router = createBrowserRouter([
   {
     path: 'error-boundary',
     element: <ErrorBoundary />
-  },
-  {
-    path: '*',
-    element: <ErrorPage />
   }
 ])
 
