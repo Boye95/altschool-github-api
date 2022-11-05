@@ -7,14 +7,7 @@ import {
 } from '@tanstack/react-query'
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools'
 import { createBrowserRouter, RouterProvider, Route } from 'react-router-dom'
-import {
-  Root,
-  ErrorPage,
-  RepoList,
-  SingleRepo,
-  ErrorBoundary,
-  ErrorBoundaryTest
-} from './routes'
+import { Root, ErrorPage, RepoList, SingleRepo, ErrorBoundary, ErrorBoundaryTest } from './routes'
 import { HelmetProvider } from 'react-helmet-async'
 import './index.css'
 
