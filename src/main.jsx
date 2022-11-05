@@ -8,6 +8,7 @@ import {
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools'
 import { createBrowserRouter, RouterProvider, Route } from 'react-router-dom'
 import { Root, ErrorPage, RepoList, SidebarCard, SingleRepo } from './routes'
+import { HelmetProvider } from 'react-helmet-async'
 import './index.css'
 
 const client = new QueryClient()
@@ -33,7 +34,9 @@ const router = createBrowserRouter([
 ReactDOM.createRoot(document.getElementById('root')).render(
   <QueryClientProvider client={client}>
     <React.StrictMode>
-      <RouterProvider router={router} />
+      <HelmetProvider>
+        <RouterProvider router={router} />
+      </HelmetProvider>
     </React.StrictMode>
     <ReactQueryDevtools />
   </QueryClientProvider>

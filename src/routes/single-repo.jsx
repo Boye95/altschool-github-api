@@ -2,6 +2,7 @@ import { useParams, useNavigate } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import { useQuery } from '@tanstack/react-query'
 import { BiLinkExternal } from 'react-icons/bi'
+import { Helmet } from 'react-helmet-async'
 import moment from 'moment'
 import star from '../assets/star.jpg'
 
@@ -19,6 +20,12 @@ export default function SingleRepo () {
 
   // console.log(singleRepo)
   return (
+    <>
+      <Helmet>
+        <title>{`Boye Github API | ${singleRepo?.name}`}</title>
+        <meta name='description' content={`This is the detail page for ${singleRepo?.name} repository`} />
+        <link rel='canonical' href={`/repo-list/${singleRepo?.name}`} />
+      </Helmet>
     <motion.div
       className='absolute top-0 h-full w-full mx-auto my-auto p-6 rounded-lg shadow-lg bg-white'
       initial={{ x: '50%' }}
@@ -42,10 +49,10 @@ export default function SingleRepo () {
               </div>
 
               <div className='font-urbanist font-normal'>
-                <div className='text-2xl'>
+                <h1 className='text-2xl'>
                   <span className='text-lg font-light font-worksans'>Name</span>
                   : {singleRepo.name}
-                </div>
+                </h1>
                 <div className='text-xl'>
                   <span className='text-lg font-light font-worksans'>
                     fullName
@@ -112,6 +119,6 @@ export default function SingleRepo () {
           </div>
         ) : null}
       </div>
-    </motion.div>
+    </motion.div></>
   )
 }
