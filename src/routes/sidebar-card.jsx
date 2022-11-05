@@ -23,8 +23,14 @@ export default function SidebarCard () {
         <h1 className='text-3xl font-bold text-center underline decoration-wavy decoration-slate-500 cursor-pointer transition-all hover:decoration-emerald-400 sm:text-xl'>
           ALT-GITHUB-API
         </h1>
-        <Link to='/repo-list' className='border-2 border-emerald-100 rounded-lg py-1 px-4 text-white bg-emerald-400 shadow-lg ring-2 ring-emerald-200 ring-offset-2 transition-all hover:text-black hover:bg-white hover:shadow-sm hover:ring-offset-1 sm:text-sm sm:px-2 xs:text-xs'>
+        <Link
+          to='/repo-list'
+          className='border-2 border-emerald-100 rounded-lg py-1 px-4 text-white bg-emerald-400 shadow-lg ring-2 ring-emerald-200 ring-offset-2 transition-all hover:text-black hover:bg-white hover:shadow-sm hover:ring-offset-1 sm:text-sm sm:px-2 xs:text-xs'
+        >
           Open Repository List
+        </Link>
+        <Link to='error-boundary-test' className='border-2 border-emerald-100 rounded-lg py-1 px-4 text-white bg-emerald-400 shadow-lg ring-2 ring-emerald-200 ring-offset-2 transition-all hover:text-black hover:bg-white hover:shadow-sm hover:ring-offset-1 sm:text-sm sm:px-2 xs:text-xs'>
+          See ErrorBoundary
         </Link>
       </header>
 
