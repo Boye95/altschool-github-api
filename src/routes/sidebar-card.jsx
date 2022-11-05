@@ -18,9 +18,9 @@ export default function SidebarCard () {
 
   // console.log(status)
   return (
-    <aside className='w-[80%] h-[95%] flex flex-col gap-11 p-6 bg-white shadow-lg'>
+    <aside className='w-[80%] h-[95%] flex flex-col gap-11 p-6 bg-white shadow-lg md:w-[90%]'>
       <header className='flex justify-between items-center w-full mx-auto font-urbanist'>
-        <h1 className='text-3xl font-bold text-center underline decoration-wavy decoration-slate-500'>
+        <h1 className='text-3xl font-bold text-center underline decoration-wavy decoration-slate-500 cursor-pointer transition-all hover:decoration-emerald-400'>
           ALT-GITHUB-API
         </h1>
         <Link to='/repo-list' className='border-2 border-emerald-100 rounded-lg py-1 px-4 text-white bg-emerald-400 shadow-lg ring-2 ring-emerald-200 ring-offset-2 transition-all hover:text-black hover:bg-white hover:shadow-sm hover:ring-offset-1 disabled:opacity-50'>
@@ -58,7 +58,7 @@ export default function SidebarCard () {
               {status === 'success' ? (
                 <span className='text-3xl'>{data.following}</span>
               ) : (
-                ''
+                'Loading...'
               )}
               <span className='px-1'>following</span>
             </span>
@@ -75,7 +75,7 @@ export default function SidebarCard () {
           <p className=''>Repo Count</p>
         </div>
 
-        <div className=''>
+        <div className='flex gap-3'>
           <p className='flex items-center gap-1'>
             <FaGlobeAfrica />
             {status === 'success' ? data.location : 'Loading...'}
@@ -107,12 +107,12 @@ export default function SidebarCard () {
         </div>
       </div>
 
-      <footer className=''>
+      <footer className='text-center'>
         By{' '}
         <a
           href='https://boyei.tech'
           target='_blank'
-          className='underline decoration-dotted'
+          className='underline decoration-dotted transition-all hover:decoration-red-800'
         >
           Boye
         </a>{' '}
@@ -120,7 +120,7 @@ export default function SidebarCard () {
         <a
           href='https://altschoolafrica.com'
           target='_blank'
-          className='underline decoration-dotted'
+          className='underline decoration-dotted transition-all hover:decoration-red-800'
         >
           AltSchoolAfrica
         </a>

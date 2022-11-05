@@ -11,12 +11,6 @@ const fetchRepos = async page => {
 }
 
 export default function RepoList () {
-  const [toggle, setToggle] = useState(false)
-
-  const handleToggle = () => {
-    setToggle(!toggle)
-  }
-
   // const { repoId } = useParams()
   const [page, setPage] = useState(1)
   // useQuery hook to fetch data from github api
@@ -26,13 +20,12 @@ export default function RepoList () {
     { keepPreviousData: true }
   )
 
-  // console.log(repo)
   return (
     <div className='h-screen w-full flex justify-center items-center bg-emerald-100'>
       <div className='relative h-[95%] w-[80%] p-6 rounded-lg shadow-lg bg-white'>
         <div className='h-full'>
           <div className='flex justify-between items-center mx-auto font-urbanist'>
-            <h2 className='text-3xl underline decoration-wavy decoration-slate-500'>
+            <h2 className='text-3xl underline decoration-wavy decoration-slate-500 cursor-pointer transition-all hover:decoration-emerald-400'>
               Repositories.
             </h2>
             <Link

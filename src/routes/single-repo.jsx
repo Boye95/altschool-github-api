@@ -17,7 +17,7 @@ export default function SingleRepo () {
     fetchSingleRepo(repoId)
   )
 
-  console.log(singleRepo)
+  // console.log(singleRepo)
   return (
     <motion.div
       className='absolute top-0 h-full w-full mx-auto my-auto p-6 rounded-lg shadow-lg bg-white'
