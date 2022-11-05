@@ -13,9 +13,9 @@ export default function Root () {
         <link rel='canonical' href={`/`} />
       </Helmet>
 
-      <div className='w-full h-screen flex justify-center items-center bg-emerald-100'>
+      <main className='w-full h-screen flex justify-center items-center bg-emerald-100'>
         <SidebarCard />
-      </div>
+      </main>
     </>
   )
 }

@@ -32,15 +32,15 @@ export default function RepoList () {
         <link rel='canonical' href={`/repo-list`} />
       </Helmet>
       <div className='h-screen w-full flex justify-center items-center bg-emerald-100'>
-        <div className='relative h-[95%] w-[80%] p-6 rounded-lg shadow-lg bg-white'>
+        <div className='relative h-[95%] w-[80%] p-6 rounded-lg shadow-lg bg-white md:w-[90%] sm:w-[95%] sm:p-2 xs:h-[95%] '>
           <div className='h-full'>
             <div className='flex justify-between items-center mx-auto font-urbanist'>
-              <h1 className='text-3xl underline decoration-wavy decoration-slate-500 cursor-pointer transition-all hover:decoration-emerald-400'>
+              <h1 className='text-3xl underline decoration-wavy decoration-slate-500 cursor-pointer transition-all hover:decoration-emerald-400 sm:text-2xl'>
                 Repositories.
               </h1>
               <Link
                 to='/'
-                className='border-2 border-emerald-100 rounded-lg py-1 px-4 text-white bg-emerald-400 shadow-lg ring-2 ring-emerald-200 ring-offset-2 transition-all hover:text-black hover:bg-white hover:shadow-sm hover:ring-offset-1 disabled:opacity-50'
+                className='border-2 border-emerald-100 rounded-lg py-1 px-4 text-white bg-emerald-400 shadow-lg ring-2 ring-emerald-200 ring-offset-2 transition-all hover:text-black hover:bg-white hover:shadow-sm hover:ring-offset-1 sm:text-sm'
               >
                 Go Back Home
               </Link>
@@ -76,7 +76,7 @@ export default function RepoList () {
                     <Link
                       to={`${singlerepo.name}`}
                       key={singlerepo.id}
-                      className='flex justify-between w-full border-2 rounded-lg p-4 shadow-md cursor-pointer ring-emerald-300 ring-offset-2 transition-all hover:ring-2 hover:text-gray-100 hover:bg-emerald-500'
+                      className='flex justify-between w-full border-2 rounded-lg p-4 shadow-md cursor-pointer ring-emerald-300 ring-offset-2 transition-all hover:ring-2 hover:text-gray-100 hover:bg-emerald-500 sm:p-3'
                     >
                       <p className=''>{singlerepo.name}</p>
                       <p className=''>{singlerepo.language}</p>
