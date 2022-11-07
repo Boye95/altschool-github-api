@@ -18,7 +18,7 @@ export default function SidebarCard () {
 
   // console.log(status)
   return (
-    <section className='w-[80%] h-[95%] flex flex-col gap-11 p-6 bg-white shadow-lg md:w-[90%] sm:w-[95%] sm:p-3 xs:h-auto'>
+    <section className='w-[80%] h-[95%] flex flex-col gap-11 p-6 bg-white shadow-lg md:w-[90%] sm:w-[95%] sm:p-3 xs:h-full'>
       <header className='flex justify-between items-center w-full mx-auto font-urbanist'>
         <h1 className='text-3xl font-bold text-center underline decoration-wavy decoration-slate-500 cursor-pointer transition-all hover:decoration-emerald-400 sm:text-xl'>
           ALT-GITHUB-API
