@@ -29,15 +29,15 @@ export default function SidebarCard () {
         >
           Open Repository List
         </Link>
-        {/* <Link
-          to='error-boundary-test'
-          className='border-2 border-emerald-100 rounded-lg py-1 px-4 text-white bg-emerald-400 shadow-lg ring-2 ring-emerald-200 ring-offset-2 transition-all hover:text-black hover:bg-white hover:shadow-sm hover:ring-offset-1 sm:text-sm sm:px-2 xs:text-xs'
-        >
-          See ErrorBoundary
-        </Link> */}
       </header>
 
       <div className='font-worksans flex flex-col items-center gap-2'>
+        <Link
+          to='error-boundary-test'
+          className='border-2 border-red-100 rounded-lg py-1 px-2 text-white bg-red-400 shadow-lg ring-2 ring-red-200 ring-offset-2 transition-all hover:text-black hover:bg-white hover:shadow-sm hover:ring-offset-1 sm:text-sm sm:px-2 xs:text-xs'
+        >
+          ErrorBoundary
+        </Link>
         <div className='h-[12rem] w-[12rem] rounded-xl shadow-xl bg-slate-50 overflow-hidden border-2 border-gray-200 ring-offset-2 ring-emerald-300 transition-all hover:ring-2'>
           <img
             src={status === 'success' ? data.avatar_url : avatar}
